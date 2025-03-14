@@ -7,7 +7,7 @@ class Solution:
         while low <= high:
             mid = (high+low)//2
             if  target >= letters[mid]: 
-                low = mid+1
+                low = mid
             if target < letters[mid]:
                 high = mid-1
         return letters[low]
