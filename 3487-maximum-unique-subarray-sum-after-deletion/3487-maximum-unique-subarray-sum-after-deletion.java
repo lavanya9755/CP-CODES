@@ -14,6 +14,7 @@ class Solution {
         }
         if (st.size() > 0)
             return sum;
-       
+        else
+            return mxNeg;
     }
 }
