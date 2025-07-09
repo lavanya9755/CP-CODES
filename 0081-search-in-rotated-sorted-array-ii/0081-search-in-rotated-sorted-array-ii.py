@@ -9,20 +9,21 @@ class Solution:
 
             if nums[mid] == target:
                 return True
-            elif nums[mid] > nums[left]:
+
+            if nums[mid] == nums[left] and nums[mid] == nums[right]:
+                left+=1
+                right-=1
+                continue
+                
+            if nums[mid] >= nums[left]:
                 if nums[left] <= target <= nums[mid]:
                     right = mid - 1
                 else:
                     left = mid + 1
-            elif nums[mid] < nums[right]:
+            else:
                 if nums[mid] <= target <= nums[right]:
                     left = mid + 1
                 else:
                     right = mid - 1
-            else:
-                left+=1
-                right-=1
-                continue
-
         
         return False
